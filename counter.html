@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: url(./charlotte-coneybeer-R8Oakk_lLP8-unsplash.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            color: rgba(0, 0, 0, 0.75);
+            height: 100vh;
+        }
+        .wrapper{
+            
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50% ,-50%);
+            padding: 3rem;
+            background: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+            box-shadow: 6.3px 12.6px 12.6px hsl(0deg 0% 0% / 0.30);
+            border-radius: 20px;
+            height: 400px;
+            width: 400px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: rgba(0, 0, 0, 0.75);
+            
+        }
+        h1{
+            text-align: center;
+            font-size: 2rem;
+
+        }
+        span{
+            font-size: 4rem;
+            margin: 3rem 0;
+        }
+        .btns{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: rgba(0, 0, 0, 0.75);
+        }
+        .btn{
+            margin-right: 1rem;
+            padding: .3rem;
+            width: 80px;
+            height: 40px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: rgba(0, 0, 0, 0.798);
+            border-radius: 40px;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            box-shadow: 5px 5px 10px gray;
+            transition:all .1s ease-in-out ;
+        }
+        .incr:active{
+            box-shadow: 5px 5px 10px rgb(73, 255, 110);
+            color:  rgb(73, 255, 110);
+        }
+        .dcr:active{
+            box-shadow: 5px 5px 10px rgb(251, 56, 56);
+            color:  rgb(251, 56, 56);
+        }
+        .reset:active{
+            box-shadow: 5px 5px 10px rgb(225, 251, 56);
+            color:  rgb(225, 251, 56);
+        }
+
+
+        .reset{
+            font-size: 1.2rem;
+            text-transform:uppercase ;
+            font-weight: 700;
+        }
+        .dcr ,.incr{
+            font-size: 2rem;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <h1>COUNTER</h1>
+        <span class="count">0</span>
+        <div class="btns">
+            <button class="btn dcr">-</button>
+            <button class="btn reset">Reset</button>
+            <button class="btn incr">+</button>
+        </div>
+    </div>
+    <script>
+        const incr=document.querySelector(".incr");
+        const dcr=document.querySelector(".dcr");
+        const reset=document.querySelector(".reset");
+        const span=document.querySelector("span");
+        console.log(span.textContent) 
+        let count=0;
+        incr.addEventListener('click',()=>{
+            count++;
+            span.textContent=count;
+        })
+        dcr.addEventListener('click',()=>{
+            count--;
+            span.textContent=count;
+        })
+        reset.addEventListener('click',()=>{
+            count=0;
+            span.textContent=count;
+        })
+
+    </script>
+</body>
+</html>
